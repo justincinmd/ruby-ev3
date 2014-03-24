@@ -1,4 +1,4 @@
-# Ruby::EV3
+# EV3
 
 TODO: Write a gem description
 
