@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'ruby/ev3/version'
+require 'ev3/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "ruby-ev3"
-  spec.version       = Ruby::Ev3::VERSION
+  spec.version       = EV3::VERSION
   spec.authors       = ["Justin Cunningham"]
   spec.email         = ["justin@bulletprooftiger.com"]
   spec.summary       = %q{TODO: Write a short summary. Required.}
@@ -20,4 +20,5 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.5"
   spec.add_development_dependency "rake"
+  spec.add_development_dependency "yard"
 end
