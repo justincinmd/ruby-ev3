@@ -10,6 +10,9 @@ module EV3
   end
 end
 
+
+# TODO: Consider moving these monkey patches into a refinement
+
 class Integer
   BYTE_CONVERSION = {1 => 'c', 2 => 'v', 4 => 'V'}
 
