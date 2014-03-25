@@ -24,7 +24,7 @@ module EV3
       #
       # @param [Integer, Array<Integer>] byte_or_bytes to append to the command
       def <<(byte_or_bytes)
-        bytes = byte_or_bytes.is_a?(Array) ? byte_or_bytes : [byte_or_bytes]
+        bytes = byte_or_bytes.arrayify
         bytes.each { |byte| @bytes << byte }
       end
 
@@ -36,10 +36,36 @@ module EV3
       # Raises an exception if the value isn't found in the range
       #
       # @param [Integer] value to check against the range
-      # @param [String] name of the variable, for the exception message
-      # @param [Range(Integer)] range the value should be in
+      # @param [String] variable_name for the exception message
+      # @param [Range<Integer>] range the value should be in
       def validate_range!(value, variable_name, range)
         raise(ArgumentError, "#{variable_name} should be between #{range.min} and #{range.max}") unless range.include?(value)
+      end
+
+      # Raises an exception if the value isn't one of the constant values from the constant module or class
+      #
+      # @param [Integer] value to check against the constant
+      # @param [String] variable_name for the exception message
+      # @param [Class, Module] constant_container which contains constant values
+      def validate_constant!(value, variable_name, constant_container)
+        values = constant_container.constants.map{|c| constant_container.const_get(c) }
+        raise(ArgumentError, "#{variable_name} should be of type #{constant_container.name}") unless values.include?(value)
+      end
+
+      # Raises an exception if the value isn't one of the type type_or_types
+      #
+      # @param [Integer] value to check against the constant
+      # @param [String] variable_name for the exception message
+      # @param [Class, Array<Class>] type_or_types type(s) to check the value against
+      #
+      # @example Validate if value is the specified type
+      #   validate_type!(layer, 'layer', Integer)
+      #
+      # @example Validate if value is any of the specified types
+      #    validate_type!(layer, 'layer', [Integer, Float])
+      def validate_type!(value, variable_name, type_or_types)
+        types = type_or_types.arrayify
+        raise(ArgumentError, "#{variable_name} should be of type #{type.name}") unless types.any?{ |type| value.is_a?(type) }
       end
 
       private
