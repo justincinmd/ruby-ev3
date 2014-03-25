@@ -1,6 +1,7 @@
 module EV3
   module Commands
     class OutputSpeed < Output
+      using EV3::CoreExtensions
 
       # Creates a new output speed
       #

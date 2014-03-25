@@ -1,6 +1,8 @@
 module EV3
   module Commands
     class SoundTone < Base
+      using EV3::CoreExtensions
+
       # Creates a new sound tone command
       #
       # @param [Integer] Volume of the sound [0..100]

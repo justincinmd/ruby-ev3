@@ -1,6 +1,8 @@
 module EV3
   module Commands
     class Output < Base
+      using EV3::CoreExtensions
+
       # Creates a new output
       #
       # @param [Integer] nos output bit field [0x00..0x0F]

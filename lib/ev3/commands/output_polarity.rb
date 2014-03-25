@@ -1,6 +1,8 @@
 module EV3
   module Commands
     class OutputPolarity < Output
+      using EV3::CoreExtensions
+
       FORWARD = 1
       BACKWARD = -1
       OPPOSITE = 0

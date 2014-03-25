@@ -1,6 +1,7 @@
 module EV3
   module Commands
     class OutputStop < Output
+      using EV3::CoreExtensions
 
       # Creates a new output stop command
       #

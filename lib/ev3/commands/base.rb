@@ -1,6 +1,8 @@
 module EV3
   module Commands
     class Base
+      using EV3::CoreExtensions
+
       attr_accessor :sequence_number
 
       def initialize(local_variables = 0, global_variables = 0)
