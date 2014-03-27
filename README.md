@@ -1,6 +1,8 @@
 # EV3
 
-TODO: Write a gem description
+This gem is a work-in-progress to allow controlling the LEGO EV3.  At 
+present, the EV3 can be connected over Bluetooth, the brick can play
+tones, and motor speed can be set.  
 
 ## Installation
 
