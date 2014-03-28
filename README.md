@@ -8,7 +8,7 @@ tones, and motor speed can be set.
 
 Add this line to your application's Gemfile:
 
-    gem 'ruby-ev3'
+    gem 'ruby-ev3', :require =>  'ev3'
 
 And then execute:
 
