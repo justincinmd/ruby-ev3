@@ -1,5 +1,3 @@
-require 'ev3/validations/constant'
-
 module EV3
   module Commands
     class Base
