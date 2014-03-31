@@ -29,6 +29,7 @@ module EV3
     #
     # @param [instance subclassing Commands::Base] command to execute
     def execute(command)
+      validate_type!(command, 'command', EV3::Commands::Base)
       self.connection.write(command)
     end
   end
