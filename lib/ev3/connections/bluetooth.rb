@@ -21,6 +21,10 @@ module EV3
         @serial_port.read_timeout = 5000
       end
 
+      def disconnect
+        @serial_port.close
+      end
+
       # Set the sequence number on the command and write it to the bluetooth connection
       #
       # @param [instance subclassing Commands::Base] command to execute
