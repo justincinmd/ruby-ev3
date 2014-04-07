@@ -11,8 +11,8 @@ module EV3
       #
       # @param [String] device on the Mac, a dev device, and on windows a com port
       def initialize(device = '/dev/tty.EV3-SerialPort')
+        super()
         @device = device
-        @commands_sent = 0
       end
 
       def connect
@@ -25,15 +25,13 @@ module EV3
         @serial_port.close
       end
 
-      # Set the sequence number on the command and write it to the bluetooth connection
+      # Write the command to the bluetooth connection
       #
       # @param [instance subclassing Commands::Base] command to execute
-      def write(command)
-        command.sequence_number = @commands_sent
+      def perform_write(command)
         command.to_bytes.each do |b|
           @serial_port.putc b
         end
-        @commands_sent += 1
       end
     end
 
