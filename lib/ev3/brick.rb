@@ -47,8 +47,12 @@ module EV3
       end
     end
 
-    def motor(letter)
-      send("motor_#{letter.to_s.downcase}")
+    # Fetches the motor attached to the motor port
+    # @param [sym in [:a, :b, :c, :d]] motor_port
+    # @example get motor attached to port a
+    #   motor_a = brick.motor(:a)
+    def motor(motor_port)
+      send("motor_#{motor_port.to_s.downcase}")
     end
 
     # Execute the command
