@@ -68,10 +68,10 @@ module EV3
 
     # Direct command
     DIRECT_COMMAND = 0x00
-    DIRECT_COMMAND_NO_REPLY = 0x80 | WITHOUT_REPLY
+    DIRECT_COMMAND_NO_REPLY = DIRECT_COMMAND | WITHOUT_REPLY
     # System command.
     SYSTEM_COMMAND = 0x01
-    SYSTEM_COMMAND_NO_REPLY = 0x80 | WITHOUT_REPLY
+    SYSTEM_COMMAND_NO_REPLY = SYSTEM_COMMAND | WITHOUT_REPLY
     # Direct command reply.
     DIRECT_REPLY = 0x02
     # System command reply.
