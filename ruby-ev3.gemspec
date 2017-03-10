@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = EV3::VERSION
   spec.authors       = ["Justin Cunningham"]
   spec.email         = ["justin@bulletprooftiger.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Gem for controlling the EV3 lego robot.}
+  spec.description   = %q{Gem for controlling the EV3 lego robot.}
   spec.homepage      = ""
   spec.license       = "MIT"
 

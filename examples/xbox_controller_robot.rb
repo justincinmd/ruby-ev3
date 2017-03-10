@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'ev3'
-require 'ev3/connections/wifi'
+require 'ev3/connections/bluetooth'
 require 'artoo'
 
 INTERVAL = 0.1
@@ -22,9 +22,9 @@ class Robot
   MAX_TURN = 40
 
   def initialize
-    @brick = EV3::Brick.new(EV3::Connections::Wifi.new)
+    @brick = EV3::Brick.new(EV3::Connections::Bluetooth.new)
     @brick.connect
-    @brick.beep
+    # @brick.beep
 
     motors.each do |motor|
       motor.stop
